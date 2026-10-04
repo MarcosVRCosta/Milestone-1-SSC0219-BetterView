@@ -5,7 +5,7 @@ Além dos requisitos padrões de Clientes, Administradores e Carrinho de Compras
 * **Funcionalidade Específica (Filtro por Formato de Rosto):** Mecanismoque permite ao usuário filtrar o catálogo de óculos de acordo com o formato do seu rosto (Quadrado, Redondo ou Oval), alterando dinamicamente o DOM para exibir apenas os produtos compatíveis.
 
 ## 2. Descrição do Projeto e Arquitetura SPA
-A aplicação foi feita seguindo o modelo de Single-Page Application (SPA), centralizando a estrutura em um único arquivo principal (`index.html`). 
+A aplicação foi feita seguindo o modelo de Single-Page Application (SPA), centralizando a estrutura em um único arquivo principal . 
 
  **Nota Importante para a Milestone 1:** Como as funções de alternância dinâmica do JavaScript (manipulação do DOM para ocultar/exibir seções) serão implementadas e avaliadas apenas nas próximas fases do projeto, **todas as interfaces obrigatórias desta entrega (Vitrine, Área do Cliente/Checkout e Painel Administrativo) foram colocadas na mesma página**. Isso permite a validação imediata do design, Nas próximas entregas, essas áreas serão devidamente trabalhadas e atualizadas.
 
