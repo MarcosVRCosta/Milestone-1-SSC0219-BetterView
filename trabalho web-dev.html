@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Óticas BetterView - Loja de Óculos Online</title>
+    <style>
+        /* --- estilo da pagina --- */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f4f6f9;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #1e293b;
+            color: #fff;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #38bdf8;
+        }
+
+        nav button {
+            background: none;
+            border: 1px solid #38bdf8;
+            color: #38bdf8;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            border-radius: 4px;
+            font-weight: bold;
+            transition: 0.3s;
+            margin-left: 0.5rem;
+        }
+
+        nav button:hover {
+            background-color: #38bdf8;
+            color: #1e293b;
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+       
+        .spa-screen {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            margin-bottom: 3rem; 
+        }
+
+        h2 {
+            margin-bottom: 1.5rem;
+            color: #1e293b;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 0.5rem;
+        }
+
+        /* ---vitrine--- */
+        .filter-container {
+            background: #e2e8f0;
+            padding: 1rem;
+            border-radius: 6px;
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .filter-container select {
+            padding: 0.5rem;
+            border-radius: 4px;
+            border: 1px solid #cbd5e1;
+            font-size: 1rem;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .product-card {
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            padding: 1rem;
+            text-align: center;
+            background: #fff;
+        }
+
+        .product-image-placeholder {
+            width: 100%;
+            height: 150px;
+            background-color: #cbd5e1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #64748b;
+            border-radius: 4px;
+            margin-bottom: 1rem;
+        }
+
+        .product-price {
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: #0f172a;
+            margin: 0.5rem 0;
+        }
+
+        .btn-add {
+            background-color: #10b981;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            font-weight: bold;
+        }
+
+        /* --- carrinho e checkout --- */
+        .cart-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 2rem;
+        }
+
+        .cart-table th, .cart-table td {
+            border: 1px solid #e2e8f0;
+            padding: 1rem;
+            text-align: left;
+        }
+
+        .cart-table th {
+            background-color: #f8fafc;
+        }
+
+        .checkout-form {
+            max-width: 500px;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .form-group input, .form-group textarea {
+            padding: 0.5rem;
+            border: 1px solid #cbd5e1;
+            border-radius: 4px;
+        }
+
+        .btn-pay {
+            background-color: #2563eb;
+            color: white;
+            border: none;
+            padding: 0.75rem;
+            border-radius: 4px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        /* --- ADMINISTRADOR --- */
+        .admin-login-box {
+            max-width: 400px;
+            margin-bottom: 2rem;
+            padding: 1rem;
+            border: 1px dashed #cbd5e1;
+            border-radius: 6px;
+        }
+
+        .crud-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .crud-table th, .crud-table td {
+            border: 1px solid #e2e8f0;
+            padding: 0.75rem;
+            text-align: left;
+            font-size: 0.9rem;
+        }
+
+        .btn-action {
+            padding: 0.25rem 0.5rem;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            margin-right: 0.2rem;
+            font-size: 0.8rem;
+        }
+
+        .btn-edit { background-color: #eab308; color: white; }
+        .btn-delete { background-color: #ef4444; color: white; }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background-color: #1e293b;
+            color: #94a3b8;
+            margin-top: 5rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo" style="display: flex; align-items: center; gap: 0.75rem;">
+            
+            <!-- SVG da logo -->
+            <div style="background-color: #4285f4; width: 42px; height: 42px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">             
+                <svg xmlns="http://w3.org" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="6" cy="15" r="3"/>
+                    <circle cx="18" cy="15" r="3"/>
+                    <path d="M14 15a2 2 0 0 0-4 0"/>
+                    <path d="M2.5 13 5 7c.7-1.3 1.4-2 3-2"/>
+                    <path d="M21.5 13 19 7c-.7-1.3-1.5-2-3-2"/>
+                </svg>
+            </div>
+
+            <!-- nome da loja-->
+            <span style="font-family: 'Segoe UI', sans-serif; font-weight: bold; letter-spacing: 0.5px; color: #38bdf8;">Better<span style="color: #ffffff; font-weight: 300;">View</span></span>
+        </div>
+        <nav>
+            <button onclick="alert(' Simulação  Vitrine')">Vitrine</button>
+            <button onclick="alert(' Simulação  Carrinho')">Carrinho (1)</button>
+            <button onclick="alert(' Simulação  Área do Admin')">Painel Admin</button>
+        </nav>
+    </header>
+    <main>
+        <!-- vitrine -->
+        <section id="screen-vitrine" class="spa-screen">
+            <h2>🕶️  Catálogo de Óculos</h2>
+            
+            <!-- filro -->
+            <div class="filter-container">
+                <label for="rosto-filter"><strong> Filtrar por Formato de Rosto:</strong></label>
+                <select id="rosto-filter">
+                    <option value="todos">-- Mostrar Todos --</option>
+                    <option value="redondo">Rosto Redondo (Sugere Óculos Quadrados)</option>
+                    <option value="quadrado">Rosto Quadrado (Sugere Óculos Redondos)</option>
+                    <option value="oval">Rosto Oval (Sugere Óculos Redondo Retro)</option>
+                </select>
+                
+            </div>
+
+            <div class="products-grid">
+                <!-- Produto 1 -->
+                <div class="product-card">
+                    <img src="oculosquadrado.png" alt="Óculos de Grau Retangulares Pretos" style="width: 100%; height: 180px; object-fit: contain; background-color: #f8fafc; padding: 10px; border-radius: 4px; margin-bottom: 1rem;">
+                    <h3>Óculos de Grau Retangulares Pretos </h3>
+                    <p>Ideal para Rostos Redondos</p>
+                    <p class="product-price">R$ 150,00</p>
+                    <button class="btn-add">Adicionar ao Carrinho</button>
+                </div>
+                <!-- Produto 2 -->
+                <div class="product-card">
+                    <img src="oculosredondo.jpg" alt="Óculos de Grau Redondo Pretos" style="width: 100%; height: 180px; object-fit: contain; background-color: #f8fafc; padding: 10px; border-radius: 4px; margin-bottom: 1rem;">
+                    <h3>Óculos de Grau Redondo Pretos </h3>
+                    <p>Ideal para Rostos Quadrados</p>
+                    <p class="product-price">R$ 200,00</p>
+                    <button class="btn-add">Adicionar ao Carrinho</button>
+                </div>
+                <!-- Produto 3 -->
+                <div class="product-card">
+                    <img src="oculosredondoretro.jpg" alt="Óculos Redondo Retrô" style="width: 100%; height: 180px; object-fit: contain; background-color: #f8fafc; padding: 10px; border-radius: 4px; margin-bottom: 1rem;">
+                    <h3>Óculos Redondo Retro</h3>
+                    <p>Ideal para Rostos Ovais</p>
+                    <p class="product-price">R$ 175,90</p>
+                    <button class="btn-add">Adicionar ao Carrinho</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- carrinho-->
+        <section id="screen-cart" class="spa-screen">
+            <h2>🛒  Carrinho de Compras</h2>
+            
+            <table class="cart-table">
+                <thead>
+                    <tr>
+                        <th>Produto</th>
+                        <th>Qtd</th>
+                        <th>Preço Unitário</th>
+                        <th>Subtotal</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Óculos de Grau Retangulares Pretos</td>
+                        <td>1</td>
+                        <td>R$ 150,00</td>
+                        <td>R$ 150,00</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <form class="checkout-form" onsubmit="event.preventDefault(); const metodo = document.getElementById('payment-method').value; alert('Sucesso! Compra simulada via [' + metodo.toUpperCase() + '] com sucesso!');">
+                <div class="form-group">
+                    <label>Nome Completo do Cliente:</label>
+                    <input type="text" placeholder="Marcos Vinicius Rodrigues da Costa" required>
+                </div>
+                <div class="form-group">
+                    <label>Endereço de Entrega:</label>
+                    <textarea placeholder="Rua da USP, 123 - São Carlos" required></textarea>
+                </div>
+
+                <!-- pagamento -->
+                <div class="form-group">
+                    <label for="payment-method"><strong>Forma de Pagamento:</strong></label>
+                    <select id="payment-method" style="padding: 0.5rem; border-radius: 4px; border: 1px solid #cbd5e1; font-size: 1rem;" onchange="const campoCartao = document.getElementById('card-field-group'); if(this.value === 'credito' || this.value === 'debito') { campoCartao.style.display = 'flex'; } else { campoCartao.style.display = 'none'; }">
+                        <option value="pix"> PIX </option>
+                        <option value="credito"> Cartão de Crédito</option>
+                        <option value="debito"> Cartão de Débito</option>
+                        <option value="paypal"> PayPal</option>
+                    </select>
+                </div>
+
+                <!-- cartão -->
+                <div class="form-group" id="card-field-group" style="display: none;">
+                    <label>Número do Cartão:</label>
+                    <input type="text" placeholder="0000 0000 0000 0000">
+                </div>
+
+                <button type="submit" class="btn-pay" style="margin-top: 1rem;">Finalizar Compra </button>
+            </form>
