@@ -14,4 +14,26 @@ A aplicação foi feita seguindo o modelo de Single-Page Application (SPA), cent
 2. **Área do Cliente:** Permite revisar os itens adicionados ao carrinho, selecionar a forma de pagamento (PIX, Cartão ou PayPal) e simular a finalização da compra.
 3. **Área do Administrador:** Interface exclusiva com a tabela CRUD estruturada para o gerenciamento de estoque (visualização inicial de ID, preços, estoque e ações de edição/exclusão).
 
+### Diagrama :
+```
+                  [ TELA 1: HOME / VITRINE ] 
+                   (Pública para Visitantes)
+                             │
+            ┌────────────────┴────────────────┐
+            ▼                                 ▼
+    [ Filtro de Rosto ]               [ Menu de Navegação ]
+ (Filtra óculos na tela)                      │
+                                              ▼
+                               [ Alternância Dinâmica de Telas ]
+                                              │
+                      ┌───────────────────────┴───────────────────────┐
+                      ▼                                               ▼
+         [ TELA 2: ÁREA DO CLIENTE ]                     [ TELA 3: ÁREA DO ADMINISTRADOR ]
+                      │                                               │
+         ┌────────────┴────────────┐                     ┌────────────┴────────────┐
+         ▼                         ▼                     ▼                         ▼
+   [ Carrinho ]            [ Forma Pagto ]         [ Tabela CRUD ]         [ Estoque ]
+ (Exibe Produtos)       (PIX/Cartão/PayPal)     (Editar/Excluir)         (Visualizar)
+```
+
 
