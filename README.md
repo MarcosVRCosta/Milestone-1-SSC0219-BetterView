@@ -24,7 +24,7 @@ A aplicação foi feita seguindo o modelo de Single-Page Application (SPA), cent
     [ Filtro de Rosto ]               [ Menu de Navegação ]
  (Filtra óculos na tela)                      │
                                               ▼
-                               [ Alternância Dinâmica de Telas ]
+                                       [Alternar Telas]
                                               │
                       ┌───────────────────────┴───────────────────────┐
                       ▼                                               ▼
