@@ -1,7 +1,7 @@
 # Milestone-1-SSC0219-BetterView
 Milestone 1 da disciplina Introdução a Web Development (SSC0219) - ICMC USP. Protótipo SPA de e-commerce de óculos (BetterView).
 ## 1. Requisitos Específicos do Projeto
-Além dos requisitos padrões de Clientes, Administradores e Carrinho de Compras, nossa aplicação implementa:
+Além dos requisitos padrões de Clientes, Administradores e Carrinho de Compras, minha aplicação implementa:
 * **Funcionalidade Específica (Filtro por Formato de Rosto):** Mecanismoque permite ao usuário filtrar o catálogo de óculos de acordo com o formato do seu rosto (Quadrado, Redondo ou Oval), alterando dinamicamente o DOM para exibir apenas os produtos compatíveis.
 
 ## 2. Descrição do Projeto e Arquitetura SPA
