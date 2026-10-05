@@ -2,7 +2,7 @@
 **Disciplina:** Introdução a Web Development (2026) - ICMC USP  
 **Desenvolvedor:** Marcos Vinicius Rodrigues da Costa - NUSP: 18119590
 
-### 📝 Descrição Geral da Loja
+###  Descrição Geral da Loja
 A **BetterView** é um e-commerce especializado na venda de óculos variados, focado em oferecer uma experiência personalizada de escolha de armações. O objetivo principal da plataforma é unir usabilidade simplificada e sofisticação visual, permitindo que os clientes encontrem a armação ideal e realizem compras de forma fluida através de um ecossistema digital moderno e acessível.
 
 ---
@@ -18,7 +18,7 @@ Além dos requisitos padrão de gerenciamento fornecidos no escopo da disciplina
 ## 2. Project Description
 A aplicação foi arquitetada seguindo o modelo de **Single-Page Application (SPA)**, centralizando toda a experiência do usuário dentro de um único arquivo estrutural (`index.html`). 
 
-⚠️ **Nota para a Avaliação da Milestone 1:** Dado que os mecanismos automatizados de manipulação do DOM e alternância lógica com JavaScript serão desenvolvidos nas fases seguintes, **todas as três interfaces obrigatórias (Vitrine, Área do Cliente/Checkout e Painel Administrativo) foram dispostas sequencialmente na mesma página**. Isso visa permitir aos revisores uma avaliação imediata ,nas próximas entregas, essas áreas serão devidamente trabalhadas e atualizadas.
+ **Nota para a Avaliação da Milestone 1:** Dado que os mecanismos automatizados de manipulação do DOM e alternância lógica com JavaScript serão desenvolvidos nas fases seguintes, **todas as três interfaces obrigatórias (Vitrine, Área do Cliente/Checkout e Painel Administrativo) foram dispostas sequencialmente na mesma página**. Isso visa permitir aos revisores uma avaliação imediata ,nas próximas entregas, essas áreas serão devidamente trabalhadas e atualizadas.
 
 ### A. Functionalities to be Implemented
 * **Catálogo e Filtro de Rosto:** Filtragem de produtos no client-side alterando o DOM sem requisições de página.
